@@ -12,4 +12,4 @@ cache:
   directories:
     - $HOME/.m2
 script:
-  - mvn -f pom.xml clean verify coveralls:report
+  - mvn -f pom.xml clean verify
