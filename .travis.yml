@@ -4,9 +4,9 @@ services:
   - docker
 addons:
 sonarcloud:
-organization: "AndreaPuccia"
-token:
-secure: $SONAR_TOKEN
+  organization: "AndreaPuccia"
+  token:
+    secure: $SONAR_TOKEN
 install: skip
 cache:
   directories:
