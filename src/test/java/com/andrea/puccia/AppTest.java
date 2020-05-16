@@ -42,4 +42,9 @@ public class AppTest
         System.out.println(result.toString());
         assertTrue(result.equals(s));
     }
+
+    @Test
+    public void assertTrueTest(){
+        assertTrue(true);
+    }
 }
