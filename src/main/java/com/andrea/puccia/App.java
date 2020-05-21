@@ -10,7 +10,7 @@ import javax.persistence.Persistence;
 public class App {
     public static void main(String[] args) {
         System.out.println("Hello World!");
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("PERSISTENCE");
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("TEST_PERSISTENCE");
         EntityManager entityManager = factory.createEntityManager();
         Student s = new Student();
         s.setCognome("Mario");
