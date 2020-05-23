@@ -3,9 +3,12 @@ package com.andrea.puccia;
 import org.assertj.swing.annotation.GUITest;
 import org.assertj.swing.edt.GuiActionRunner;
 import org.assertj.swing.fixture.FrameFixture;
+import org.assertj.swing.junit.runner.GUITestRunner;
 import org.assertj.swing.junit.testcase.AssertJSwingJUnitTestCase;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ViewTest extends AssertJSwingJUnitTestCase {
     private FrameFixture window;
@@ -30,6 +33,6 @@ public class ViewTest extends AssertJSwingJUnitTestCase {
 
     @Test
     public void testLabel() {
-//        window.label("label").requireText("Label test");
+        assertThat(window.label("label").text()).isEqualTo("Label test");
     }
 }
