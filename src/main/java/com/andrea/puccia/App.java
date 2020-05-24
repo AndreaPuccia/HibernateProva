@@ -19,5 +19,6 @@ public class App {
         entityManager.persist(s);
         entityManager.getTransaction().commit();
         System.out.println(s.toString());
+        System.out.println("ciaooooooo");
     }
 }
