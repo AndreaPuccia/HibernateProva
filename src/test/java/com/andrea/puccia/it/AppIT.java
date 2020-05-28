@@ -1,7 +1,7 @@
-package com.andrea.puccia;
+package com.andrea.puccia.it;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
+import com.andrea.puccia.Student;
+import org.junit.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -15,14 +15,32 @@ import static org.junit.Assert.assertTrue;
  */
 public class AppIT
 {
-    private static EntityManagerFactory factory;
+    private static EntityManagerFactory entityManagerFactory;
     private static EntityManager entityManager;
 
     @BeforeClass
-    public static void setup(){
-        factory = Persistence.createEntityManagerFactory("TEST_PERSISTENCE");
-        entityManager = factory.createEntityManager();
+    public static void setUpClass() {
+        entityManagerFactory = Persistence.createEntityManagerFactory("TEST_PERSISTENCE");
     }
+
+    @Before
+    public void setUp() {
+        entityManager = entityManagerFactory.createEntityManager();
+        entityManager.getTransaction().begin();
+        entityManager.createQuery("DELETE FROM Student s").executeUpdate();
+        entityManager.getTransaction().commit();
+    }
+
+    @After
+    public void tearDown() {
+        entityManager.close();
+    }
+
+    @AfterClass
+    public static void tearDownClass() {
+        entityManagerFactory.close();
+    }
+
     /**
      * Rigorous Test :-)
      */
