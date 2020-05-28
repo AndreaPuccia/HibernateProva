@@ -9,7 +9,7 @@ import javax.persistence.Persistence;
  */
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("ciaoooo!");
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("TEST_PERSISTENCE");
         EntityManager entityManager = factory.createEntityManager();
         Student s = new Student();
@@ -19,5 +19,6 @@ public class App {
         entityManager.persist(s);
         entityManager.getTransaction().commit();
         System.out.println(s.toString());
+        System.out.println("ciaooooooo");
     }
 }
